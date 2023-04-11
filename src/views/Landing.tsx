@@ -59,19 +59,6 @@ const Label = styled.label`
   margin-bottom: 10px;
 `;
 
-const SubmitButton = styled.button`
-  display: block;
-  padding: 0.5rem 0.5rem;
-  font-size: 1rem;
-  background-color: #a5bfb2;
-  color: #000000;
-  border: none;
-  border-radius: 0.25rem;
-  cursor: pointer;
-  font-weight: bold;
-  margin-top: 10px;
-`;
-
 const Logo = styled.img`
   margin-bottom: 40px;
 `;
@@ -97,7 +84,7 @@ export const Landing: React.FC = () => {
           alt="Logo"
           style={{ width: "200px", height: "100px" }}
         />
-        {/* <H1>Registratie openingsfeest CultuurHoek</H1> */}
+        <H1>Registratie openingsfeest CultuurHoek</H1>
         <Form onSubmit={handleSubmit}>
           <Label htmlFor="aanwezig_openingsfeest">
             Aanwezig bij openingsfeest op 24 september

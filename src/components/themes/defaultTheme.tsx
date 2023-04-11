@@ -32,6 +32,7 @@ export const theme = {
     grey: "#DDD",
     greyLight: "#EEE",
     green: "#8ca098",
+    orange: "#eb684b",
   },
   radius: {
     none: "0",

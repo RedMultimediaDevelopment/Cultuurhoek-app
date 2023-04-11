@@ -4,7 +4,6 @@ import logo from "../assets/logo.png";
 
 import styled, { css } from "styled-components";
 
-import { ButtonDefault, ButtonSecondary } from "./Buttons";
 import { Link } from "react-router-dom";
 
 const StyledNav = styled.div`
@@ -14,21 +13,24 @@ const StyledNav = styled.div`
   list-style: none;
   position: relative;
   padding: 0;
-  width: 100%;
+  max-width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.4);
   padding: 0 1.5rem;
   font-size: ${(props) => props.theme.fontSizes.small};
 
   .logo {
-    max-height: 30px;
-    max-width: 120px;
+    height: 70px;
+    width: 190px;
+    margin-top: 1rem;
   }
 
   > div {
     display: flex;
     align-items: center;
-    gap: ${(props) => props.theme.spacing.small};
+    justify-content: space-between;
+    width: 100%;
+    margin-right: ${(props) => props.theme.spacing.small};
   }
 
   @media screen and (min-width: ${(props) => props.theme.breakPoints.medium}) {
@@ -38,6 +40,7 @@ const StyledNav = styled.div`
 
     > div {
       gap: ${(props) => props.theme.spacing.xlarge};
+      justify-content: flex-start;
     }
   }
 `;
@@ -45,13 +48,11 @@ const StyledNav = styled.div`
 const NavItemWrapper = styled.div`
   gap: ${(props) => props.theme.spacing.small};
   display: flex;
-
   flex-direction: column;
   position: fixed;
-  left: -300px;
+  left: -400px;
   width: 300px;
   max-width: 100%;
-  background-color: #8ca098;
   top: 0;
   bottom: 0;
   transition: left 0.2s;
@@ -63,7 +64,7 @@ const NavItemWrapper = styled.div`
   }
 
   @media screen and (min-width: ${(props) => props.theme.breakPoints.medium}) {
-    gap: ${(props) => props.theme.spacing.xlarge};
+    gap: ${(props) => props.theme.spacing.large};
   }
 
   @media screen and (min-width: ${(props) => props.theme.breakPoints.small}) {
@@ -76,10 +77,11 @@ const NavItemWrapper = styled.div`
 `;
 
 const NavItem = styled(Link)`
-  color: #fff;
+  color: #000;
+  margin-left: ${(props) => props.theme.spacing.small};
   text-decoration: none;
   &:hover {
-    color: #000;
+    color: ${(props) => props.theme.colors.orange};
   }
 `;
 
@@ -88,9 +90,11 @@ interface MobileBtnProps {
 }
 
 const MobileNavBtn = styled.div<MobileBtnProps>`
+  display: flex;
+  justify-content: flex-end;
   width: 1.5rem;
   height: 1.5rem;
-  color: #fff;
+  color: #000;
 
   svg {
     width: 100%;
@@ -111,7 +115,7 @@ const MobileNavBtn = styled.div<MobileBtnProps>`
 `;
 
 const Backdrop = styled.div`
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(255, 255, 255, 1);
   position: fixed;
   left: 0;
   top: 0;
@@ -123,19 +127,11 @@ export const Navbar = () => {
   const [navState, toggleNavState] = useState(false);
 
   let NavItems;
-  let AuthButtons;
 
   NavItems = (
     <>
-      <NavItem to="/">Over ons</NavItem>
-      <NavItem to="/about">Hoe werkt het?</NavItem>
-      <NavItem to="/events">Agenda</NavItem>
-    </>
-  );
-  AuthButtons = (
-    <>
-      <ButtonSecondary>Login</ButtonSecondary>
-      <ButtonDefault>Meld je aan</ButtonDefault>
+      <NavItem to="/">OVER ONS</NavItem>
+      <NavItem to="/events">AGENDA</NavItem>
     </>
   );
 
@@ -165,7 +161,6 @@ export const Navbar = () => {
           </MobileNavBtn>
           {navState ? <Backdrop /> : undefined}
         </div>
-        {/* <div style={{ gap: "20px" }}>?????</div> */}
       </StyledNav>
     </>
   );
