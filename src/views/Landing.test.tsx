@@ -1,6 +1,5 @@
 import React from "react";
 import { render, fireEvent } from "@testing-library/react";
-
 import { Landing } from "./Landing";
 
 describe("Landing Page", () => {
@@ -31,15 +30,15 @@ describe("Landing Page", () => {
     fireEvent.change(emailInput, { target: { value: "test@test.com" } });
     fireEvent.change(ageInput, { target: { value: "30-39" } });
     fireEvent.change(genderInput, { target: { value: "man" } });
-    fireEvent.change(locationInput, { target: { value: "Amsterdam" } });
+    fireEvent.change(locationInput, {
+      target: { value: "Driebergen-Rijsenburg" },
+    });
     fireEvent.change(newsletterInput, { target: { value: "ja" } });
-
-    console.log(locationInput.value);
 
     expect(emailInput.value).toBe("test@test.com");
     expect(ageInput.value).toBe("30-39");
     expect(genderInput.value).toBe("man");
-    expect(locationInput.value).toBe("Amsterdam");
+    expect(locationInput.value).toBe("Driebergen-Rijsenburg");
     expect(newsletterInput.value).toBe("ja");
   });
 });

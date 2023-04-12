@@ -5,11 +5,11 @@ import { BrowserRouter } from "react-router-dom";
 
 export const App = () => {
   return (
-    <Theme>
-      <BrowserRouter>
+    <BrowserRouter>
+      <Theme>
         <AppRouter />
-      </BrowserRouter>
-    </Theme>
+      </Theme>
+    </BrowserRouter>
   );
 };
 

@@ -81,14 +81,14 @@ export const EventList: React.FC<Props> = ({ events }) => {
   return (
     <EventListContainer>
       {events.map((event) => (
-        <EventListItem key={event.id}>
+        <EventListItem key={event.id} data-testid="event-list-item">
           <EventImage src={event.image} alt={event.description} />
           <EventInfo>
-            <EventDate>{event.date}</EventDate>
-            <EventTime>{event.time}</EventTime>
-            <EventDescription>{event.description}</EventDescription>
-            <EventPrice>€{event.price}</EventPrice>
-            <BuyTicketButton>Ticket Kopen</BuyTicketButton>
+            <EventDate data-testid="event-date">{event.date}</EventDate>
+            <EventTime data-testid="event-time">{event.time}</EventTime>
+            <EventDescription data-testid="event-description">{event.description}</EventDescription>
+            <EventPrice data-testid="event-price">€{event.price}</EventPrice>
+            <BuyTicketButton data-testid="buy-ticket-button">Ticket Kopen</BuyTicketButton>
           </EventInfo>
         </EventListItem>
       ))}
