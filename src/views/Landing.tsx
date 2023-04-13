@@ -4,19 +4,19 @@ import logo from "../assets/logo.png";
 import { Button } from "../components/Buttons";
 
 const Body = styled.body`
-  height: 100vh;
+
   background: linear-gradient(to right, #a5bfb2, #fff);
 `;
 
 const LandingPageContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto;  
 `;
 
 const Form = styled.form`
   max-width: 500px;
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 1rem;
   background-color: #fff;
   border-radius: 0.25rem;
@@ -32,6 +32,7 @@ const Input = styled.input`
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  font-size:11px;
 `;
 
 const Select = styled.select`
@@ -42,13 +43,13 @@ const Select = styled.select`
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  font-size: 11px;
 `;
 
 const H1 = styled.h1`
   text-align: center;
   font-size: 30px;
   font-weight: bolder;
-  margin: 40px;
   text-transform: uppercase;
   color: rgb(65, 65, 65);
 `;
