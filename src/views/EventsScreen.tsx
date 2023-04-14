@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import Theme from "../components/themes/defaultTheme";
 
 import { Header } from "../components/Header";
 import { EventList } from "../modules/events/views/EventList";
@@ -73,14 +74,16 @@ const events = [
   },
 ];
 
-export const Landing = () => {
+export const EventsScreen = () => {
   return (
-    <Wrapper>
-      <Header />
-      <PageTitle>Evenementen</PageTitle>
-      <EventList events={events} />
-    </Wrapper>
+    <Theme>
+      <Wrapper>
+        <Header />
+        <PageTitle>Evenementen</PageTitle>
+        <EventList events={events} />
+      </Wrapper>
+    </Theme>
   );
 };
 
-export default Landing;
+export default EventsScreen;

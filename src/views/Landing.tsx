@@ -3,8 +3,8 @@ import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { Button } from "../components/Buttons";
 
-const Body = styled.body`
 
+const Body = styled.body`
   background: linear-gradient(to right, #a5bfb2, #fff);
 `;
 
