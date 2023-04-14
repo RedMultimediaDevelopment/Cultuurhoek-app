@@ -3,26 +3,31 @@ import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { Button } from "../components/Buttons";
 
-const Body = styled.div`
-  height: 100vh;
+
+const Body = styled.body`
   background: linear-gradient(to right, #a5bfb2, #fff);
 `;
 
 const LandingPageContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 0 auto;  
+    @media (max-width: 768px) {
+    max-width: 80%;
+    }
 `;
 
 const Form = styled.form`
   max-width: 500px;
-  margin: 0 auto;
+  margin: 80px auto;
   padding: 1rem;
   background-color: #fff;
   border-radius: 0.25rem;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
   font-weight: bold;
 `;
+
+
 
 const Input = styled.input`
   display: block;
@@ -32,6 +37,7 @@ const Input = styled.input`
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  font-size:11px;
 `;
 
 const Select = styled.select`
@@ -42,13 +48,13 @@ const Select = styled.select`
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
+  font-size: 11px;
 `;
 
 const H1 = styled.h1`
   text-align: center;
   font-size: 30px;
   font-weight: bolder;
-  margin: 40px;
   text-transform: uppercase;
   color: rgb(65, 65, 65);
 `;
@@ -60,7 +66,7 @@ const Label = styled.label`
 `;
 
 const Logo = styled.img`
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 `;
 
 export const Landing: React.FC = () => {
@@ -82,9 +88,9 @@ export const Landing: React.FC = () => {
         <Logo
           src={logo}
           alt="Logo"
-          style={{ width: "200px", height: "100px" }}
+          style={{ width: "150px", height: "75px" }}
         />
-        <H1>Registratie openingsfeest CultuurHoek</H1>
+        <H1>Registratie Open Dag CultuurHoek</H1>
         <Form onSubmit={handleSubmit}>
           <Label htmlFor="aanwezig_openingsfeest">
             Aanwezig bij openingsfeest op 24 september
