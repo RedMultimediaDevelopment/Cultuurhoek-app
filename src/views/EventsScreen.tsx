@@ -13,7 +13,6 @@ const PageTitle = styled.h1`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-left: ${(props) => props.theme.spacing.xlarge};
 `;
 
 //temp

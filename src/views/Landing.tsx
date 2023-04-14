@@ -3,18 +3,20 @@ import styled from "styled-components";
 import logo from "../assets/logo.png";
 import { Button } from "../components/Buttons";
 
-
 const Body = styled.body`
   background: linear-gradient(to right, #a5bfb2, #fff);
+  height: 100%;
+  width: 100%;
+  position: absolute;
 `;
 
 const LandingPageContainer = styled.div`
   font-family: Arial, Helvetica, sans-serif;
-  max-width: 800px;
-  margin: 0 auto;  
-    @media (max-width: 768px) {
+  width: 100%;
+  margin: 0 auto;
+  @media (max-width: 768px) {
     max-width: 80%;
-    }
+  }
 `;
 
 const Form = styled.form`
@@ -27,8 +29,6 @@ const Form = styled.form`
   font-weight: bold;
 `;
 
-
-
 const Input = styled.input`
   display: block;
   width: 100%;
@@ -37,7 +37,7 @@ const Input = styled.input`
   border-radius: 0.25rem;
   margin-bottom: 1rem;
   box-sizing: border-box;
-  font-size:11px;
+  font-size: 11px;
 `;
 
 const Select = styled.select`
@@ -67,6 +67,10 @@ const Label = styled.label`
 
 const Logo = styled.img`
   margin-bottom: 20px;
+  padding-top: 2rem;
+  padding-left: 5rem;
+  width: 210px;
+  height: 85px;
 `;
 
 export const Landing: React.FC = () => {
@@ -85,11 +89,7 @@ export const Landing: React.FC = () => {
   return (
     <Body>
       <LandingPageContainer>
-        <Logo
-          src={logo}
-          alt="Logo"
-          style={{ width: "150px", height: "75px" }}
-        />
+        <Logo src={logo} alt="Logo" />
         <H1>Registratie Open Dag CultuurHoek</H1>
         <Form onSubmit={handleSubmit}>
           <Label htmlFor="aanwezig_openingsfeest">
@@ -164,6 +164,7 @@ export const Landing: React.FC = () => {
           <Select
             id="news_letter"
             name="news_letter"
+            value={newsLetter}
             onChange={(e) => setNewsLetter(e.target.value)}
           >
             <option value="">Kies een optie</option>

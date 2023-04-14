@@ -123,6 +123,10 @@ const Backdrop = styled.div`
   bottom: 0;
 `;
 
+const Logo = styled.img`
+  margin-bottom: 1rem;
+`;
+
 export const Navbar = () => {
   const [navState, toggleNavState] = useState(false);
 
@@ -139,7 +143,7 @@ export const Navbar = () => {
     <>
       <StyledNav>
         <div>
-          <img alt="logo" src={logo} className="logo" />
+          <Logo alt="logo" src={logo} className="logo" />
           <NavItemWrapper className={navState ? "open" : undefined}>
             {NavItems}
             <MobileNavBtn absolute onClick={() => toggleNavState(!navState)}>

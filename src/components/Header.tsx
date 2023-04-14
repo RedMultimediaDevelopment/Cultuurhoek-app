@@ -6,7 +6,6 @@ import React from "react";
 
 const StyledHeader = styled.div`
   display: flex;
-
   flex-direction: column;
   position: sticky;
   width: 100%;
@@ -21,10 +20,11 @@ export const ExtendedHeader = styled.div`
   display: flex;
   position: sticky;
   width: 100%;
+
   top: 0;
   z-index: 2;
   background-color: #fff;
-  height: 90px;
+  height: 105px;
 `;
 
 const Header = ({ ...props }) => {
