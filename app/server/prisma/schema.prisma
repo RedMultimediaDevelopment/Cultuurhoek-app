@@ -1,0 +1,20 @@
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["mongodb"]
+
+}
+
+datasource db {
+  provider = "mongodb"
+  url      = "mongodb+srv://cultuurhoek:cultuurhoek123@cultuurhoek.cdnbhdu.mongodb.net/cultuurhoek?retryWrites=true&w=majority"
+}
+
+model User {
+  id                  String  @id @default(cuid()) @map("_id")
+  birthYear           String?
+  gender              String?
+  location            String?
+  newsLetter          Boolean?
+  isPresentLaunchParty Boolean?
+  email               String  @unique
+}
